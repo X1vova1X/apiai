@@ -17,7 +17,9 @@ const IMGBB_API_KEY = '3c52e4fe8eb291af1d1dc7407a20cfd4';
 
 // Middleware to parse JSON bodies
 app.use(express.json());
-
+app.get('/', (req, res) => {
+   res.json({"message": ":3 My API for PenguinAI"}) 
+});
 app.get('/v1', (req, res) => {
     res.json({"message": "Welcome to PenguinAI's new API! Contact Connor if there are downtimes."});
 });
