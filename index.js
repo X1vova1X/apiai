@@ -12,6 +12,7 @@ app.use(cors({
 // External API URLs
 const CHAT_API_URL = 'https://penguinai.milosantos.com/v1/chat/completions';
 const IMAGE_API_URL = 'https://penguinai.milosantos.com/v1/images/generations';
+const MODEL_API_URL = 'https://penguinai.milosantos.com/v1/models';
 const FILE_API_URL = 'https://api.imgbb.com/1/upload';
 const IMGBB_API_KEY = '3c52e4fe8eb291af1d1dc7407a20cfd4';
 
@@ -23,6 +24,11 @@ app.get('/', (req, res) => {
 app.get('/v1', (req, res) => {
     res.json({"message": "Welcome to PenguinAI's new API! Contact Connor if there are downtimes."});
 });
+
+app.get('/v1/models', async (req, res) => {
+    const response = await axios.get(MODEL_API_URL);
+    res.json(response.data);
+})
 
 // Route to send a POST request to the chat completions API
 app.post('/v1/chat/completions', async (req, res) => {
