@@ -33,7 +33,7 @@ app.get('/v1/models', async (req, res) => {
 
 app.get('/v1/api/working', async (req, res) => {
     const response = await axios.get(CHECK_API_URL + String(req.query.model))
-    res.json(response.data)
+    res.send(response.data)
 })
 
 // Route to send a POST request to the chat completions API
