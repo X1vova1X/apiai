@@ -13,6 +13,7 @@ app.use(cors({
 const CHAT_API_URL = 'https://penguinai.milosantos.com/v1/chat/completions';
 const IMAGE_API_URL = 'https://penguinai.milosantos.com/v1/images/generations';
 const MODEL_API_URL = 'https://penguinai.milosantos.com/v1/models';
+const CHECK_API_URL = 'https://penguinai.milosantos.com/v1/api/working?model=';
 const FILE_API_URL = 'https://api.imgbb.com/1/upload';
 const IMGBB_API_KEY = '3c52e4fe8eb291af1d1dc7407a20cfd4';
 
@@ -28,6 +29,11 @@ app.get('/v1', (req, res) => {
 app.get('/v1/models', async (req, res) => {
     const response = await axios.get(MODEL_API_URL);
     res.json(response.data);
+})
+
+app.get('/v1/api/working', async (req, res) => {
+    const response = await axios.get(CHECK_API_URL + String(req.query.model))
+    res.json(response.data)
 })
 
 // Route to send a POST request to the chat completions API
