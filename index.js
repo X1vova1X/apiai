@@ -5,9 +5,7 @@ const cors = require("cors");
 const app = express();
 const PORT = 3000;
 
-app.use(cors({
-    origin: ['https://turbowarp.org', 'https://penguinmod.com', 'https://vercel.app', 'null', 'http://xbuilder.rf.gd']
-}));
+app.options('*', cors()); // Enable preflight for all routes
 
 // External API URLs
 const CHAT_API_URL = 'https://penguinai.milosantos.com/v1/chat/completions';
