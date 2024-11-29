@@ -6,7 +6,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(cors({
-    origin: ['https://turbowarp.org', 'https://penguinmod.com', 'https://vercel.app', 'null', 'rf.gd']
+    origin: ['https://turbowarp.org', 'https://penguinmod.com', 'https://vercel.app', 'null', 'xbuilder.rf.gd']
 }));
 
 // External API URLs
