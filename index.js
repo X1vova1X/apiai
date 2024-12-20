@@ -5,7 +5,7 @@ const cors = require("cors");
 const app = express();
 const PORT = 3000;
 
-app.options('*', cors()); // Enable preflight for all routes
+app.use(cors())
 
 let prefered = "derpy";
 
