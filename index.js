@@ -20,7 +20,7 @@ if (prefered == "derpy") {
    CHAT_API_URL = "https://penguinai.derpygamer2142.com/v1/chat/completions";
    IMAGE_API_URL = "https://penguinai.derpygamer2142.com/v1/images/generations";
    MODEL_API_URL = 'https://penguinai.derpygamer2142.com/v1/models';
-   CHECK_API_URL = 'https://penguinai.derpygamer2142.com/v1/api/working?model=';
+   CHECK_API_URL = false;
 } else if (prefered == "abby") {
    CHAT_API_URL = 'https://penguinai.abby.is-a.dev/v1/chat/completions';
    IMAGE_API_URL = 'https://penguinai.abby.is-a.dev/v1/images/generations';
@@ -43,8 +43,12 @@ app.get('/v1/models', async (req, res) => {
 })
 
 app.get('/v1/api/working', async (req, res) => {
-    const response = await axios.get(CHECK_API_URL + String(req.query.model))
-    res.send(response.data)
+    if (CHECK_API_URL != false) {
+        const response = await axios.get(CHECK_API_URL + String(req.query.model))
+        res.send(response.data)
+    } else {
+        res.send("rework")
+    }
 })
 
 // Route to send a POST request to the chat completions API
