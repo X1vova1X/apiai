@@ -7,13 +7,26 @@ const PORT = 3000;
 
 app.options('*', cors()); // Enable preflight for all routes
 
+let prefered = "derpy";
+
 // External API URLs
-const CHAT_API_URL = 'https://penguinai.abby.is-a.dev/v1/chat/completions';
-const IMAGE_API_URL = 'https://penguinai.abby.is-a.dev/v1/images/generations';
-const MODEL_API_URL = 'https://penguinai.abby.is-a.dev/v1/models';
-const CHECK_API_URL = 'https://penguinai.abby.is-a.dev/v1/api/working?model=';
-const FILE_API_URL = 'https://api.imgbb.com/1/upload';
-const IMGBB_API_KEY = '3c52e4fe8eb291af1d1dc7407a20cfd4';
+let CHAT_API_URL = 'https://penguinai.abby.is-a.dev/v1/chat/completions';
+let IMAGE_API_URL = 'https://penguinai.abby.is-a.dev/v1/images/generations';
+let MODEL_API_URL = 'https://penguinai.abby.is-a.dev/v1/models';
+let CHECK_API_URL = 'https://penguinai.abby.is-a.dev/v1/api/working?model=';
+let FILE_API_URL = 'https://api.imgbb.com/1/upload';
+let IMGBB_API_KEY = '3c52e4fe8eb291af1d1dc7407a20cfd4';
+if (prefered == "derpy") {
+   CHAT_API_URL = "https://penguinai.derpygamer2142.com/v1/chat/completions";
+   IMAGE_API_URL = "https://penguinai.derpygamer2142.com/v1/images/generations";
+   MODEL_API_URL = 'https://penguinai.derpygamer2142.com/v1/models';
+   CHECK_API_URL = 'https://penguinai.derpygamer2142.com/v1/api/working?model=';
+} else if (prefered == "abby") {
+   CHAT_API_URL = 'https://penguinai.abby.is-a.dev/v1/chat/completions';
+   IMAGE_API_URL = 'https://penguinai.abby.is-a.dev/v1/images/generations';
+   MODEL_API_URL = 'https://penguinai.abby.is-a.dev/v1/models';
+   CHECK_API_URL = 'https://penguinai.abby.is-a.dev/v1/api/working?model=';
+}
 
 // Middleware to parse JSON bodies
 app.use(express.json());
