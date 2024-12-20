@@ -8,10 +8,10 @@ const PORT = 3000;
 app.options('*', cors()); // Enable preflight for all routes
 
 // External API URLs
-const CHAT_API_URL = 'https://penguinai.milosantos.com/v1/chat/completions';
-const IMAGE_API_URL = 'https://penguinai.milosantos.com/v1/images/generations';
-const MODEL_API_URL = 'https://penguinai.milosantos.com/v1/models';
-const CHECK_API_URL = 'https://penguinai.milosantos.com/v1/api/working?model=';
+const CHAT_API_URL = 'https://penguinai.abby.is-a.dev/v1/chat/completions';
+const IMAGE_API_URL = 'https://penguinai.abby.is-a.dev/v1/images/generations';
+const MODEL_API_URL = 'https://penguinai.abby.is-a.dev/v1/models';
+const CHECK_API_URL = 'https://penguinai.abby.is-a.dev/v1/api/working?model=';
 const FILE_API_URL = 'https://api.imgbb.com/1/upload';
 const IMGBB_API_KEY = '3c52e4fe8eb291af1d1dc7407a20cfd4';
 
