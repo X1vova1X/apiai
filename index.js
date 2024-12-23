@@ -7,7 +7,7 @@ const PORT = 3000;
 
 app.use(cors())
 
-let prefered = "derpy";
+let prefered = "abby";
 
 // External API URLs
 let CHAT_API_URL = 'https://penguinai.abby.is-a.dev/v1/chat/completions';
